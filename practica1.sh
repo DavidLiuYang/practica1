@@ -6,10 +6,7 @@ codi_ciudad='xx'
 
 while [[ $opcion != "q" ]]
 do
-	case $opcion in
-	"q") 
-		echo Saliendo de la aplicación
-	;;	
+	case $opcion in	
 	"lp") 
 		cut -d',' -f7,8 cities.csv | uniq | column -s ','
 	;;
@@ -23,7 +20,7 @@ do
 			then 
 				codi_pais="$(cut -d',' -f7,8 cities.csv | grep -w $pais | cut -d',' -f1 | uniq)"
 			else
-				codi_pais='aws'
+				codi_pais='xx'
 			fi
 		fi
 	
@@ -77,11 +74,15 @@ do
 	echo Nord $nord Sur $sur Est $est Oest $oest NoUbic $NoUbic No WDId $NoWID
 
 	;;	
-	esac
-	echo $codi_pais
-	echo $codi_ciudad
-	echo $wdid 
+	esac 
         echo Introduce una opción ; read opcion       
 done
+echo Saliendo de la aplicación
 
-echo Saliendo de la apicación
+
+
+
+
+
+
+
